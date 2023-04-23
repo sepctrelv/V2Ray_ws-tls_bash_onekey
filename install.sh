@@ -559,7 +559,7 @@ nginx_conf_add() {
     cat >${nginx_conf_dir}/v2ray.conf <<EOF
     server {
         listen 443 ssl http2;
-        listen [::]:443 http2;
+        #listen [::]:443 http2;
         ssl_certificate       /data/v2ray.crt;
         ssl_certificate_key   /data/v2ray.key;
         ssl_protocols         TLSv1.3;
@@ -593,7 +593,7 @@ nginx_conf_add() {
 }
     server {
         listen 80;
-        listen [::]:80;
+        #listen [::]:80;
         server_name serveraddr.com;
         return 301 https://use.shadowsocksr.win\$request_uri;
     }
